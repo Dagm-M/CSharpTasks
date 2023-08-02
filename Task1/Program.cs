@@ -3,10 +3,10 @@
     public static void Main()
     {
         Console.Write("Enter your name: ");
-        string studentName = Console.ReadLine();
+        string? studentName = Console.ReadLine();
 
         Console.Write("Enter the number of subjects you have taken: ");
-        int numSubjects = int.Parse(Console.ReadLine());
+        int? numSubjects = int.Parse(Console.ReadLine());
 
         List<string> subjects = new List<string>();
         List<double> grades = new List<double>();
@@ -15,7 +15,7 @@
         for (int i = 1; i <= numSubjects; i++)
         {
             Console.Write($"Enter the name of subject {i}: ");
-            string subjectName = Console.ReadLine();
+            string? subjectName = Console.ReadLine();
 
             // Prompt the student to enter the grade and validate input
             double grade;

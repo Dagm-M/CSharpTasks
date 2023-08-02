@@ -6,17 +6,24 @@ public class Program
     {
         Console.WriteLine("Enter String:");
 
-        string inputString = Console.ReadLine();
+        string? inputString = Console.ReadLine();
 
-        bool isPalindrome = PalindromeChecker.IsPalindrome(inputString);
-
-        if (isPalindrome)
+        if (inputString != null)
         {
-            Console.WriteLine($"your output is a palindrom");
+            bool isPalindrome = PalindromeChecker.IsPalindrome(inputString);
+
+            if (isPalindrome)
+            {
+                Console.WriteLine($"your output is a palindrom");
+            }
+            else
+            {
+                Console.WriteLine($"your output is not a palindrom");
+            }
         }
         else
         {
-            Console.WriteLine($"your output is not a palindrom");
+            Console.WriteLine("Invalid input");
         }
     }
 }

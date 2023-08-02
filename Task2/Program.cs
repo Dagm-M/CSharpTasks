@@ -8,13 +8,20 @@ public class Program
 
         Console.WriteLine("Enter String:");
 
-        string inputString = Console.ReadLine();
+        string? inputString = Console.ReadLine();
 
-        Dictionary<string, int> wordFrequencies = WordFrequencyCounter.CalculateWordFrequency(inputString);
-
-        foreach (var entry in wordFrequencies)
+        if (inputString != null)
         {
-            Console.WriteLine($"{entry.Key}: {entry.Value}");
+            Dictionary<string, int> wordFrequencies = WordFrequencyCounter.CalculateWordFrequency(inputString);
+
+            foreach (var entry in wordFrequencies)
+            {
+                Console.WriteLine($"{entry.Key}: {entry.Value}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input");
         }
     }
 }
