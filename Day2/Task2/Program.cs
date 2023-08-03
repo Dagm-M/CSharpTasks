@@ -35,32 +35,76 @@
 
         Library myLibrary = new Library(LibraryName, LibraryAddress);
 
-        // bool quit = false;
-        // while (!quit)
-        // {
-        //     displayMenu();
-        //     int input = Int32.Parse(Console.ReadLine());
+        bool quit = false;
+        while (!quit)
+        {
+            displayMenu();
+            int input = Int32.Parse(Console.ReadLine());
+            Console.Clear();
 
-        //     if (input == 1)
-        //     {
-        //         Console.Write("Enter the book's Name:   ");
-        //         var BookName = Console.ReadLine();
-        //         var BookTitle = Title;
-        // var BookAuthor = Author;
-        // var BookISBN = ISBN;
-        // var BookPublicationYear = PublicationYear;
-        //         Book book1 = new Book(BookName, "abebe", "1000012213", 2015);
-        //         myLibrary.AddBook(book1);
-        //     }
+            if (input == 1)
+            {
+                Console.Write("Eneter the number of books that you want to Enter:   ");
+                int num = Int32.Parse(Console.ReadLine());
+                for (int i = 0; i < num; i++)
+                {
+                    Console.Write("Enter the book's Name:   ");
+                    var BookName = Console.ReadLine();
+                    Console.Write("Enter the book's Author:   ");
+                    var BookAuthor = Console.ReadLine();
+                    Console.Write("Enter the book's ISBN:   ");
+                    var BookISBN = Console.ReadLine();
+                    Console.Write("Enter the book's Publication year:   ");
+                    int BookPublicationYear = Int32.Parse(Console.ReadLine());
+                    Book book1 = new Book(BookName, BookAuthor, BookISBN, BookPublicationYear);
+                    myLibrary.AddBook(book1);
+                }
+            }
+            else if (input == 2)
+            {
+                Console.Write("Enter Book's ISBN:   ");
+                string Isbn = Console.ReadLine();
+                foreach (Book bookItem in myLibrary.Books)
+                {
+                    if (bookItem.ISBN == Isbn)
+                    {
+                        myLibrary.RemoveBook(bookItem);
+                    }
+                }
+            }
+
+            else if (input == 3)
+            {
+                Console.Write("Eneter the number of Media Item that you want to Enter:   ");
+                int num = Int32.Parse(Console.ReadLine());
+                for (int i = 0; i < num; i++)
+                {
+                    Console.Write("Enter the Media Title:   ");
+                    var MediaTitle = Console.ReadLine();
+                    Console.Write("Enter the Media Type:   ");
+                    var MediaType = Console.ReadLine();
+                    Console.Write("Enter the Duration:   ");
+                    int MediaDuration = Int32.Parse(Console.ReadLine());
+                    Book media1 = new MediaItem(MediaTitle, MediaType, MediaDuration);
+                    myLibrary.AddMediaItem(media1);
+                }
+            }
+            else if (input == 4)
+            {
+                Console.Write("Enter Book's ISBN:   ");
+                string Isbn = Console.ReadLine();
+                foreach (Book bookItem in myLibrary.Books)
+                {
+                    if (bookItem.ISBN == Isbn)
+                    {
+                        myLibrary.RemoveBook(bookItem);
+                    }
+                }
+            }
 
 
-        // }
-        // Console.Write("");
+        }
 
-
-        Book book2 = new Book("chi", "kebede", "23453265", 2003);
-
-        myLibrary.AddBook(book2);
 
         MediaItem dvd = new MediaItem("dvditem", "dvd", 30);
 
