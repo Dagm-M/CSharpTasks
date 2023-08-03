@@ -70,9 +70,15 @@ class TaskManager
         }
     }
 
-    public void UpdateTasks()
+    public void UpdateTasks(string name, string? description, Tasks? category, bool? isCompleted)
     {
-
+        Task UpdatedTask = tasks.Find(t => t.Name == name);
+        if (UpdatedTask != null)
+        {
+            UpdatedTask.Description = description ?? UpdatedTask.Description;
+            UpdatedTask.Category = category ?? UpdatedTask.Category;
+            UpdatedTask.IsCompleted = isCompleted ?? UpdatedTask.IsCompleted;
+        }
     }
 
 
