@@ -1,0 +1,5 @@
+Name,Description,Category,IsCompleted
+Buy groceries,Buy groceries for the week,Personal,False
+Prepare presentation,Prepare slides for the upcoming presentation,Work,True
+Pay utility bills,,Financial,False
+Print Document,Print the papers for the manager,Errand,True

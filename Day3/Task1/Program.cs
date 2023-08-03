@@ -48,10 +48,12 @@ class TaskManager
         Console.WriteLine("All Tasks:");
         foreach (var task in tasks)
         {
-            Console.WriteLine("Task: Name - " + task.Name
-            + ", Description - " + task.Description
-            + ", Category - " + task.Category
-            + ", Completed - " + task.IsCompleted);
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine("Task: \nName - " + task.Name
+            + "\nDescription - " + task.Description
+            + "\nCategory - " + task.Category
+            + "\nCompleted - " + task.IsCompleted);
+            Console.WriteLine("---------------------------------");
         }
         Console.WriteLine("-------------------------------");
     }
@@ -63,10 +65,12 @@ class TaskManager
         Console.WriteLine($"Tasks in the '{category}' category:");
         foreach (var task in filteredTasks)
         {
-            Console.WriteLine("Task: Name - " + task.Name
-            + ", Description - " + task.Description
-            + ", Category - " + task.Category
-            + ", Completed - " + task.IsCompleted);
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine("Task: \nName - " + task.Name
+            + "\nDescription - " + task.Description
+            + "\nCategory - " + task.Category
+            + "\nCompleted - " + task.IsCompleted);
+            Console.WriteLine("---------------------------------");
         }
     }
 
@@ -171,5 +175,7 @@ class Program
         taskManager.AddTask(task3);
 
         taskManager.AddTask("Print Document", "Print the papers for the manager", Tasks.Errand, true);
+        // taskManager.SaveTasksToCsvAsync("C:/Users/Dagm/Desktop/Tasks/Day3/Task1/tasks.csv");
+        taskManager.LoadTasksFromCsvAsync();
     }
 }
