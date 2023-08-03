@@ -9,7 +9,7 @@
     Development
 }
 
-class Task
+class TaskHandler
 {
     public string? Name { get; set; }
     public string? Description { get; set; }
@@ -19,16 +19,16 @@ class Task
 
 class TaskManager
 {
-    public List<Task> tasks;
+    public List<TaskHandler> tasks;
     public TaskManager()
     {
-        this.tasks = new List<Task>();
+        this.tasks = new List<TaskHandler>();
     }
 
     public void AddTask(string name, string description, Tasks category, bool isCompleted)
     {
         tasks.Add(
-            new Task
+            new TaskHandler
             {
                 Name = name,
                 Description = description,
@@ -37,7 +37,7 @@ class TaskManager
             }
         );
     }
-    public void AddTask(Task task)
+    public void AddTask(TaskHandler task)
     {
         tasks.Add(task);
     }
@@ -49,7 +49,7 @@ class TaskManager
         foreach (var task in tasks)
         {
             Console.WriteLine("---------------------------------");
-            Console.WriteLine("Task: \nName - " + task.Name
+            Console.WriteLine("TaskHandler: \nName - " + task.Name
             + "\nDescription - " + task.Description
             + "\nCategory - " + task.Category
             + "\nCompleted - " + task.IsCompleted);
@@ -66,7 +66,7 @@ class TaskManager
         foreach (var task in filteredTasks)
         {
             Console.WriteLine("---------------------------------");
-            Console.WriteLine("Task: \nName - " + task.Name
+            Console.WriteLine("TaskHandler: \nName - " + task.Name
             + "\nDescription - " + task.Description
             + "\nCategory - " + task.Category
             + "\nCompleted - " + task.IsCompleted);
@@ -76,7 +76,7 @@ class TaskManager
 
     public void UpdateTasks(string name, string? description, Tasks? category, bool? isCompleted)
     {
-        Task UpdatedTask = tasks.Find(t => t.Name == name);
+        TaskHandler UpdatedTask = tasks.Find(t => t.Name == name);
         if (UpdatedTask != null)
         {
             UpdatedTask.Description = description ?? UpdatedTask.Description;
@@ -86,7 +86,7 @@ class TaskManager
     }
 
 
-    public async void SaveTasksToCsvAsync(string filePath)
+    public async Task SaveTasksToCsvAsync(string filePath)
     {
         try
         {
@@ -107,7 +107,7 @@ class TaskManager
         }
     }
 
-    public async void LoadTasksFromCsvAsync()
+    public async Task LoadTasksFromCsvAsync()
     {
         string csvFilePath = "C:/Users/Dagm/Desktop/Tasks/Day3/Task1/tasks.csv";
         try
@@ -143,11 +143,11 @@ class TaskManager
 
 class Program
 {
-    static void Main()
+    public static async Task Main()
     {
         TaskManager taskManager = new TaskManager();
-        // Using object initializer to create and populate Task objects
-        Task task1 = new Task
+        // Using object initializer to create and populate TaskHandler objects
+        TaskHandler task1 = new TaskHandler
         {
             Name = "Buy groceries",
             Description = "Buy groceries for the week",
@@ -157,7 +157,7 @@ class Program
 
         taskManager.AddTask(task1);
 
-        Task task2 = new Task
+        TaskHandler task2 = new TaskHandler
         {
             Name = "Prepare presentation",
             Description = "Prepare slides for the upcoming presentation",
@@ -166,7 +166,7 @@ class Program
         };
         taskManager.AddTask(task2);
 
-        Task task3 = new Task
+        TaskHandler task3 = new TaskHandler
         {
             Name = "Pay utility bills",
             Category = Tasks.Financial,
@@ -176,6 +176,6 @@ class Program
 
         taskManager.AddTask("Print Document", "Print the papers for the manager", Tasks.Errand, true);
         // taskManager.SaveTasksToCsvAsync("C:/Users/Dagm/Desktop/Tasks/Day3/Task1/tasks.csv");
-        taskManager.LoadTasksFromCsvAsync();
+        await taskManager.LoadTasksFromCsvAsync();
     }
 }
