@@ -175,7 +175,6 @@ class Program
         taskManager.AddTask(task3);
 
         taskManager.AddTask("Print Document", "Print the papers for the manager", Tasks.Errand, true);
-        // taskManager.SaveTasksToCsvAsync("C:/Users/Dagm/Desktop/Tasks/Day3/Task1/tasks.csv");
         await taskManager.LoadTasksFromCsvAsync();
     }
 }

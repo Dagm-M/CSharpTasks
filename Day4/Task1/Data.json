@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Dagm",
+    "Age": 23,
+    "RollNumber": 12,
+    "Grade": 90
+  },
+  {
+    "Name": "mike",
+    "Age": 24,
+    "RollNumber": 23,
+    "Grade": 98
+  },
+  {
+    "Name": "sara",
+    "Age": 25,
+    "RollNumber": 34,
+    "Grade": 89
+  },
+  {
+    "Name": "Dagm",
+    "Age": 23,
+    "RollNumber": 12,
+    "Grade": 90
+  },
+  {
+    "Name": "mike",
+    "Age": 24,
+    "RollNumber": 23,
+    "Grade": 98
+  }
+]
