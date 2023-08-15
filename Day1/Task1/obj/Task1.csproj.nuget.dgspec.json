@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dagm\\Desktop\\Tasks\\Task1\\Task1.csproj": {}
+    "c:\\Users\\Dagm\\Desktop\\Tasks\\Day1\\Task1\\Task1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dagm\\Desktop\\Tasks\\Task1\\Task1.csproj": {
+    "c:\\Users\\Dagm\\Desktop\\Tasks\\Day1\\Task1\\Task1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dagm\\Desktop\\Tasks\\Task1\\Task1.csproj",
+        "projectUniqueName": "c:\\Users\\Dagm\\Desktop\\Tasks\\Day1\\Task1\\Task1.csproj",
         "projectName": "Task1",
-        "projectPath": "C:\\Users\\Dagm\\Desktop\\Tasks\\Task1\\Task1.csproj",
+        "projectPath": "c:\\Users\\Dagm\\Desktop\\Tasks\\Day1\\Task1\\Task1.csproj",
         "packagesPath": "C:\\Users\\Dagm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dagm\\Desktop\\Tasks\\Task1\\obj\\",
+        "outputPath": "c:\\Users\\Dagm\\Desktop\\Tasks\\Day1\\Task1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dagm\\AppData\\Roaming\\NuGet\\NuGet.Config"

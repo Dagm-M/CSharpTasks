@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace BlogApp.Controllers;
 
-[Route("api/[controller]")]
 [ApiController]
+[Route("api/[controller]")]
 public class CommentsController : ControllerBase
 {
     private readonly CommentManager _commentManager;
@@ -27,12 +27,12 @@ public class CommentsController : ControllerBase
         return BadRequest(ModelState);
     }
 
-    [HttpGet("{postId}")]
-    public async Task<ActionResult<IEnumerable<Comment>>> GetByPostId(int postId)
-    {
-        var comments = await _commentManager.GetCommentsForPostAsync(postId);
-        return Ok(comments);
-    }
+    // [HttpGet("{postId}")]
+    // public async Task<ActionResult<IEnumerable<Comment>>> GetByPostId(int postId)
+    // {
+    //     var comments = await _commentManager.GetCommentsForPostAsync(postId);
+    //     return Ok(comments);
+    // }
 
     [HttpGet("{id}")]
     public async Task<ActionResult<Comment>> GetById(int id)

@@ -9,17 +9,17 @@ namespace BlogApp.Controllers;
 [Route("api/[controller]")]
 public class BlogPostsController : ControllerBase
 {
-    private readonly ApplicationDbContext _context;
+    private readonly ApplicationDbContext _BlogPostManager;
 
     public BlogPostsController(ApplicationDbContext context)
     {
-        _context = context;
+        _BlogPostManager = context;
     }
 
     [HttpGet]
     public async Task<List<BlogPost>> Index()
     {
-        var blogPosts = await _context.BlogPosts.ToListAsync();
+        var blogPosts = await _BlogPostManager.BlogPosts.ToListAsync();
 
         return blogPosts;
     }
@@ -32,7 +32,7 @@ public class BlogPostsController : ControllerBase
             return NotFound();
         }
 
-        var blogPost = await _context.BlogPosts.FirstOrDefaultAsync(m => m.BlogPostId == id);
+        var blogPost = await _BlogPostManager.BlogPosts.FirstOrDefaultAsync(m => m.BlogPostId == id);
 
         if (blogPost == null)
         {
@@ -48,8 +48,8 @@ public class BlogPostsController : ControllerBase
     {
         if (ModelState.IsValid)
         {
-            _context.Add(blogPost);
-            await _context.SaveChangesAsync();
+            _BlogPostManager.Add(blogPost);
+            await _BlogPostManager.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         return blogPost;
@@ -68,8 +68,8 @@ public class BlogPostsController : ControllerBase
         {
             try
             {
-                _context.Update(blogPost);
-                await _context.SaveChangesAsync();
+                _BlogPostManager.Update(blogPost);
+                await _BlogPostManager.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -92,11 +92,11 @@ public class BlogPostsController : ControllerBase
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
 
-        var blogPost = await _context.BlogPosts.FindAsync(id);
+        var blogPost = await _BlogPostManager.BlogPosts.FindAsync(id);
         if (blogPost != null)
         {
-            _context.BlogPosts.Remove(blogPost);
-            await _context.SaveChangesAsync();
+            _BlogPostManager.BlogPosts.Remove(blogPost);
+            await _BlogPostManager.SaveChangesAsync();
         }
 
         return Ok();
@@ -104,7 +104,7 @@ public class BlogPostsController : ControllerBase
 
     private bool BlogPostExists(int id)
     {
-        return _context.BlogPosts.Any(e => e.BlogPostId == id);
+        return _BlogPostManager.BlogPosts.Any(e => e.BlogPostId == id);
     }
 }
 
