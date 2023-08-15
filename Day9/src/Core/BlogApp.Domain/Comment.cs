@@ -7,5 +7,6 @@ namespace BlogApp.Domain
         public int BlogPostId { get; set; }
 
         public string Text { get; set; } = "";
+        public virtual BlogPost? BlogPost { get; set; }
     }
 }

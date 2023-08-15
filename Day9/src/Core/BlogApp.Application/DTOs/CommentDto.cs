@@ -1,8 +1,8 @@
-using BlogApp.Domain.Common;
+using BlogApp.Application.DTOs.Common;
 
-namespace BlogApp.Domain
+namespace BlogApp.Application.DTOs
 {
-    public class Comment : BaseDomainEntity
+    public class CommentDto : BaseDto
     {
         public int BlogPostId { get; set; }
 

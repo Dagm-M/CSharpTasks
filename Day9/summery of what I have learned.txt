@@ -1,0 +1,32 @@
+Clean Architecture in ASP.NET Core 7:
+Clean Architecture is a software design principle that emphasizes the separation of concerns, loose coupling, and adherence to Domain-Driven Design (DDD) principles. It provides a structured approach to building applications that are maintainable, scalable, and easy to test. 
+
+Separation of Concerns: Clean Architecture divides an application into distinct layers, each responsible for a specific concern. This separation ensures that changes in one layer do not directly impact other layers, leading to better code organization and maintainability.
+
+Loosely Coupled: Clean Architecture promotes loose coupling between different layers of an application. This allows for flexibility in making changes or replacing components without affecting the entire system.
+
+Domain-Driven Design (DDD): Clean Architecture integrates principles from Domain-Driven Design, placing the core business logic at the center of the application. This approach enhances the alignment of the software design with real-world business requirements.
+
+Dependency-Free Core: The core domain layer is isolated from external dependencies, frameworks, and technologies. This ensures that the core logic remains pure and can be easily tested without any external interference.
+
+Not Suitable for Simple Projects: While Clean Architecture is beneficial for complex applications, it might be overkill for simple projects like basic CRUD (Create, Read, Update, Delete) applications. Its true advantages are more apparent in applications with intricate business rules and evolving requirements.
+
+Simplified Testing: Clean Architecture makes testing more straightforward by allowing the isolation of business logic from external factors. Unit tests can be written for the core domain layer without requiring complex setup or interaction with external services.
+
+Error Protection: With a clear separation of concerns, Clean Architecture helps prevent errors from propagating across the application. It encapsulates business rules within the core, reducing the risk of unintended consequences in other layers.
+
+Dependency Flow: The architecture dictates that all communication flows from the higher-level domain layer to the lower-level infrastructure layer. This ensures that high-level business rules remain unaffected by implementation details.
+
+Clean Architecture Rules:
+
+Core Project: The core project holds all models, entities, and business logic. It remains independent of other layers, preserving the integrity of the core domain.
+
+Infrastructure Project: This layer manages external dependencies, including database implementations and external services. It provides concrete implementations for the abstractions defined in the core.
+
+Web Project: The web project represents the standard ASP.NET Core application. It serves as the user interface and interacts with the domain and infrastructure layers to fulfill user requests.
+
+
+
+
+
+
